@@ -1,0 +1,35 @@
+{
+    "name": "arsentiyz/mattermost-driver",
+    "description": "This Driver is a PHP implementation of the official Mattermost Web Services API.",
+    "keywords": ["mattermost", "chat"],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Arsentiyz\\MattermostDriver\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zhunussov Arsentiy",
+            "email": "arsentiy.zhunussov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^9.0||^10.0||^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Arsetiyz\\MattermostDriver\\MattermostServiceProvider"
+            ],
+            "aliases": {
+                "Mattermost": "Arsetiyz\\MattermostDriver\\Facades\\Mattermost"
+            }
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.63"
+    }
+}
