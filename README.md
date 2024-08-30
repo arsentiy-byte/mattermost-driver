@@ -45,10 +45,10 @@ use \Arsentiyz\MattermostDriver\Facades\Mattermost;
 $driver = Mattermost::server('default');
 
 // Retrieve the User Model
-$userModel = $driver->getUserModel();
+$userModel = $driver->getUserEndpoint();
 
 // Retrieve the User Model directly (on the default server)
-$userModel = Mattermost::server()->getUserModel();
+$userModel = Mattermost::server()->getUserEndpoint();
 ```
 
 ### Via dependency injection
@@ -60,5 +60,5 @@ use \Arsentiyz\MattermostDriver\Contracts\DriverContract;
 $mattermost = app()->make(DriverContract::class);
 
 // Retrieve the User Model
-$userModel = $driver->getUserModel();
+$userModel = $driver->getUserEndpoint();
 ```
