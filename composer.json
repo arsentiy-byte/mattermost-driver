@@ -4,6 +4,7 @@
     "keywords": ["mattermost", "chat"],
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/arsentiy-byte/mattermost-driver",
     "autoload": {
         "psr-4": {
             "Arsentiyz\\MattermostDriver\\": "src/"
@@ -15,6 +16,10 @@
             "email": "arsentiy.zhunussov@gmail.com"
         }
     ],
+    "support": {
+        "email": "arsentiyz.zhunussov@gmail.com",
+        "issues": "https://github.com/arsentiy-byte/mattermost-driver/issues"
+    },
     "require": {
         "php": "^8.2",
         "laravel/framework": "^9.0||^10.0||^11.0"
@@ -22,10 +27,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Arsetiyz\\MattermostDriver\\MattermostServiceProvider"
+                "Arsentiyz\\MattermostDriver\\MattermostServiceProvider"
             ],
             "aliases": {
-                "Mattermost": "Arsetiyz\\MattermostDriver\\Facades\\Mattermost"
+                "Mattermost": "Arsentiyz\\MattermostDriver\\Facades\\Mattermost"
             }
         }
     },
