@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Arsentiyz\MattermostDriver;
 
 use Arsentiyz\MattermostDriver\Contracts\DriverContract;
+use Arsentiyz\MattermostDriver\Endpoints\ChannelEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\CommandEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\PostEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\TeamEndpoint;
@@ -77,6 +78,11 @@ final class Driver implements DriverContract
     public function getCommandEndpoint(): CommandEndpoint
     {
         return $this->getEndpoint(CommandEndpoint::class);
+    }
+
+    public function getChannelEndpoint(): ChannelEndpoint
+    {
+        return $this->getEndpoint(ChannelEndpoint::class);
     }
 
     private function getEndpoint(string $name): mixed

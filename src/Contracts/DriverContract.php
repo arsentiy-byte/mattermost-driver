@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\Contracts;
 
+use Arsentiyz\MattermostDriver\Endpoints\ChannelEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\CommandEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\PostEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\TeamEndpoint;
@@ -31,4 +32,6 @@ interface DriverContract
     public function getTeamEndpoint(): TeamEndpoint;
 
     public function getCommandEndpoint(): CommandEndpoint;
+
+    public function getChannelEndpoint(): ChannelEndpoint;
 }
