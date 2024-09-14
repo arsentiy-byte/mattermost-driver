@@ -20,10 +20,10 @@ final readonly class ActionHookResponseDTO
     /**
      * @return array{update?: array<string, mixed>, ephemeral_text?: string}
      */
-    public function toArray(): array
+    public function map(): array
     {
         return [
-            'update' => $this->update->toArray(),
+            'update' => $this->update->map(),
             'ephemeral_text' => $this->ephemeralText,
         ];
     }

@@ -16,7 +16,7 @@ final readonly class Update
     /**
      * @return array<string, mixed>|array{message: string, props?: array}
      */
-    public function toArray(): array
+    public function map(): array
     {
         $array = [
             'message' => $this->message,
