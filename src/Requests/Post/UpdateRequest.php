@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\Requests\Post;
 
+use Arsentiyz\MattermostDriver\Entities\Props;
+
 /**
  * @phpstan-type UpdatePostRequestPayload array{id: string, is_pinned: bool, message: string, has_reactions: bool, props?: array}
  */
@@ -24,7 +26,7 @@ final readonly class UpdateRequest
         public bool $isPinned,
         public string $message,
         public bool $hasReactions,
-        public ?array $props = null,
+        public ?Props $props = null,
     ) {}
 
     /**
@@ -37,7 +39,7 @@ final readonly class UpdateRequest
             'is_pinned' => $this->isPinned,
             'message' => $this->message,
             'has_reactions' => $this->hasReactions,
-            'props' => $this->props,
+            'props' => $this->props?->toArray(),
         ];
     }
 }

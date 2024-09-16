@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\DTO;
 
+use Arsentiyz\MattermostDriver\Collections\AttachmentCollection;
 use Arsentiyz\MattermostDriver\Enums\Command\ResponseType;
 use Illuminate\Support\Arr;
 
@@ -18,7 +19,7 @@ final readonly class CommandResponseDTO
         public ResponseType $responseType = ResponseType::EPHEMERAL,
         public ?string $username = null,
         public ?string $iconUrl = null,
-        public ?array $attachments = null,
+        public ?AttachmentCollection $attachments = null,
         public ?string $goToLocation = null,
         public ?string $type = null,
         public ?array $extraResponses = null,
@@ -42,8 +43,8 @@ final readonly class CommandResponseDTO
             Arr::set($array, 'channel_id', $this->channelId);
         }
 
-        if (!empty($this->attachments)) {
-            Arr::set($array, 'attachments', $this->attachments);
+        if (null !== $this->attachments && $this->attachments->isNotEmpty()) {
+            Arr::set($array, 'attachments', $this->attachments->toArray());
         }
 
         if (!empty($this->username)) {
@@ -83,7 +84,7 @@ final readonly class CommandResponseDTO
             throw new \InvalidArgumentException('Channel ID is required, when response type is IN_CHANNEL');
         }
 
-        if (empty($this->text) && empty($this->attachments)) {
+        if (empty($this->text) && (null === $this->attachments || $this->attachments->isEmpty())) {
             throw new \InvalidArgumentException('Text or attachments are required');
         }
     }

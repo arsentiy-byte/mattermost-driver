@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\Requests\Post;
 
+use Arsentiyz\MattermostDriver\Entities\Props;
+
 /**
  * @phpstan-import-type MetadataArray from Metadata
  *
@@ -28,7 +30,7 @@ final readonly class CreateRequest
         public string $message,
         public ?string $rootId = null,
         public ?array $fileIds = null,
-        public ?array $props = null,
+        public ?Props $props = null,
         public ?Metadata $metadata = null,
     ) {}
 
@@ -52,7 +54,7 @@ final readonly class CreateRequest
             'message' => $this->message,
             'root_id' => $this->rootId,
             'file_ids' => $this->fileIds,
-            'props' => $this->props,
+            'props' => $this->props?->toArray(),
             'metadata' => $this->metadata?->toArray(),
         ];
     }

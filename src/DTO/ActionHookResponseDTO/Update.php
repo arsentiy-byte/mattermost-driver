@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\DTO\ActionHookResponseDTO;
 
-use Illuminate\Support\Arr;
+use Arsentiyz\MattermostDriver\Entities\Props;
 
 final readonly class Update
 {
     public function __construct(
         public string $message,
-        public ?array $props = null,
+        public ?Props $props = null,
     ) {}
 
     /**
@@ -18,14 +18,9 @@ final readonly class Update
      */
     public function map(): array
     {
-        $array = [
+        return [
             'message' => $this->message,
+            'props' => $this->props?->toArray(),
         ];
-
-        if (null !== $this->props) {
-            Arr::set($array, 'props', $this->props);
-        }
-
-        return $array;
     }
 }
