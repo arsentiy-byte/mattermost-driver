@@ -34,14 +34,4 @@ final class ActionCollection extends Collection
 
         return parent::add($item);
     }
-
-    /**
-     * @return array<int, array{name: string, integration: array, style?: string, type?: string, data_source?: string}>
-     */
-    public function toArray(): array
-    {
-        return $this
-            ->map(static fn (Action $action): array => $action->toArray())
-            ->toArray();
-    }
 }

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Arsentiyz\MattermostDriver\Entities;
 
 use Arsentiyz\MattermostDriver\Collections\AttachmentCollection;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 
-final readonly class Props
+final readonly class Props implements Arrayable
 {
     public function __construct(
         private array $props = [],

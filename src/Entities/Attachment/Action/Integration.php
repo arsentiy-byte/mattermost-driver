@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\Entities\Attachment\Action;
 
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 
-final class Integration
+final class Integration implements Arrayable
 {
     public function __construct(
         private string $url,

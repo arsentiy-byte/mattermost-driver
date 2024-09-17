@@ -34,14 +34,4 @@ final class FieldCollection extends Collection
 
         return parent::add($item);
     }
-
-    /**
-     * @return array<int, array{short: bool, title: string, value: string}>
-     */
-    public function toArray(): array
-    {
-        return $this
-            ->map(static fn (Field $field): array => $field->toArray())
-            ->toArray();
-    }
 }

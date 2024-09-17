@@ -8,9 +8,10 @@ use Arsentiyz\MattermostDriver\Collections\ActionCollection;
 use Arsentiyz\MattermostDriver\Collections\FieldCollection;
 use Arsentiyz\MattermostDriver\Entities\Attachment\Action;
 use Arsentiyz\MattermostDriver\Entities\Attachment\Field;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 
-final class Attachment
+final class Attachment implements Arrayable
 {
     public function __construct(
         private ?string $fallback = null,

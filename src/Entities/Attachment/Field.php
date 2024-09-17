@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Arsentiyz\MattermostDriver\Entities\Attachment;
 
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 
-final class Field
+final class Field implements Arrayable
 {
     public function __construct(
         private bool $short,

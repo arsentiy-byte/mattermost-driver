@@ -34,14 +34,4 @@ final class AttachmentCollection extends Collection
 
         return parent::add($item);
     }
-
-    /**
-     * @return array<int, array{fallback?: string, color?: string, pretext?: string, text?: string, author_name?: string, author_link?: string, author_icon?: string, title?: string, title_link?: string, fields?: array, actions?: array}>
-     */
-    public function toArray(): array
-    {
-        return $this
-            ->map(static fn (Attachment $attachment): array => $attachment->toArray())
-            ->toArray();
-    }
 }

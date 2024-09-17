@@ -8,9 +8,10 @@ use Arsentiyz\MattermostDriver\Entities\Attachment\Action\Integration;
 use Arsentiyz\MattermostDriver\Enums\Attachment\Action\DataSource;
 use Arsentiyz\MattermostDriver\Enums\Attachment\Action\Style;
 use Arsentiyz\MattermostDriver\Enums\Attachment\Action\Type;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 
-final class Action
+final class Action implements Arrayable
 {
     public function __construct(
         private string $name,
@@ -29,7 +30,7 @@ final class Action
         return new self(
             Arr::get($array, 'name'),
             Integration::fromArray(Arr::get($array, 'integration')),
-            Style::from(Arr::get($array, 'style', Style::DEFAULT)),
+            Style::from(Arr::get($array, 'style', Style::DEFAULT->value)),
             self::getType(Arr::get($array, 'type')),
             self::getDataSource(Arr::get($array, 'data_source')),
             Arr::get($array, 'id'),
