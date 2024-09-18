@@ -17,6 +17,7 @@ namespace Arsentiyz\MattermostDriver;
 use Arsentiyz\MattermostDriver\Contracts\DriverContract;
 use Arsentiyz\MattermostDriver\Endpoints\ChannelEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\CommandEndpoint;
+use Arsentiyz\MattermostDriver\Endpoints\DialogEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\PostEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\TeamEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\UserEndpoint;
@@ -83,6 +84,11 @@ final class Driver implements DriverContract
     public function getChannelEndpoint(): ChannelEndpoint
     {
         return $this->getEndpoint(ChannelEndpoint::class);
+    }
+
+    public function getDialogEndpoint(): DialogEndpoint
+    {
+        return $this->getEndpoint(DialogEndpoint::class);
     }
 
     private function getEndpoint(string $name): mixed

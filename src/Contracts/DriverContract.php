@@ -16,6 +16,7 @@ namespace Arsentiyz\MattermostDriver\Contracts;
 
 use Arsentiyz\MattermostDriver\Endpoints\ChannelEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\CommandEndpoint;
+use Arsentiyz\MattermostDriver\Endpoints\DialogEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\PostEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\TeamEndpoint;
 use Arsentiyz\MattermostDriver\Endpoints\UserEndpoint;
@@ -34,4 +35,6 @@ interface DriverContract
     public function getCommandEndpoint(): CommandEndpoint;
 
     public function getChannelEndpoint(): ChannelEndpoint;
+
+    public function getDialogEndpoint(): DialogEndpoint;
 }
