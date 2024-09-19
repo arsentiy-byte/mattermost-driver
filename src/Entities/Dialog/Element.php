@@ -40,7 +40,7 @@ abstract class Element implements Arrayable
         }
 
         if (null !== $this->default) {
-            Arr::set($array, 'default', $this->default);
+            Arr::set($array, 'default', (string) $this->default);
         }
 
         if ($this->placeholder) {
