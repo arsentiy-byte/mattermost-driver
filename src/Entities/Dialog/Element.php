@@ -50,42 +50,42 @@ abstract class Element implements Arrayable
         return $array;
     }
 
-    public function setDisplayName(string $displayName): Element
+    public function setDisplayName(string $displayName): static
     {
         $this->displayName = $displayName;
 
         return $this;
     }
 
-    public function setName(string $name): Element
+    public function setName(string $name): static
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function setOptional(bool $optional): Element
+    public function setOptional(bool $optional): static
     {
         $this->optional = $optional;
 
         return $this;
     }
 
-    public function setHelpText(?string $helpText): Element
+    public function setHelpText(?string $helpText): static
     {
         $this->helpText = $helpText;
 
         return $this;
     }
 
-    public function setDefault(mixed $default): Element
+    public function setDefault(mixed $default): static
     {
         $this->default = $default;
 
         return $this;
     }
 
-    public function setPlaceholder(?string $placeholder): Element
+    public function setPlaceholder(?string $placeholder): static
     {
         $this->placeholder = $placeholder;
 
