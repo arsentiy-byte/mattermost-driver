@@ -42,7 +42,7 @@ final class Dialog implements Arrayable
     }
 
     /**
-     * @return array{title: string, introduction_text: string, elements?: array<int, array<string, mixed>>, url?: string, icon_url?: string, submit_label?: string, notify_on_cancel?: bool, state?: string}
+     * @return array{title: string, introduction_text: string, elements?: array<int, array<string, mixed>>, icon_url?: string, submit_label?: string, notify_on_cancel?: bool, state?: string}
      */
     public function toArray(): array
     {

@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 final class OptionCollection extends Collection
 {
     /**
-     * @param array{int, array{text: string, value: mixed}} $items
+     * @param array<int, array{text: string, value: string}> $items
      */
     public static function make($items = []): self
     {

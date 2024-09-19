@@ -11,11 +11,11 @@ final readonly class Option implements Arrayable
 {
     public function __construct(
         public string $text,
-        public mixed $value,
+        public string $value,
     ) {}
 
     /**
-     * @param array{text: string, value: mixed} $array
+     * @param array{text: string, value: string} $array
      */
     public static function fromArray(array $array): self
     {
@@ -26,7 +26,7 @@ final readonly class Option implements Arrayable
     }
 
     /**
-     * @return array{text: string, value: mixed}
+     * @return array{text: string, value: string}
      */
     public function toArray(): array
     {
