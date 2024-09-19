@@ -57,11 +57,11 @@ final class SelectElement extends Element
     {
         $array = [];
 
-        if (null !== $this->dataSource && null === $this->options) {
+        if (null !== $this->dataSource && (null === $this->options || $this->options->isEmpty())) {
             Arr::set($array, 'data_source', $this->dataSource->value);
         }
 
-        if (null !== $this->options && null === $this->dataSource) {
+        if (null !== $this->options && $this->options->isNotEmpty()) {
             Arr::set($array, 'options', $this->options->toArray());
         }
 
